@@ -57,10 +57,11 @@ def parse_soup(soup):
 
 
 def main():
+    now = datetime.now()
     soup = scrape()
     clinics = parse_soup(soup)
 
-    with open(datetime.now().strftime('%y%m%d_%H%M%S.json'), 'w') as f:
+    with open(now.strftime('%y%m%d_%H%M%S.json'), 'w') as f:
         f.write(json.dumps(clinics, indent=4))
 
 
